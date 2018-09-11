@@ -3,8 +3,200 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-size: 16px;
+}
+
 .wrapper {
+    position: relative;
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
+    background-color: #ddd;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'Montserrat-Bold';
+    font-size: 3rem;
+    color: #fde428;
+}
+
+h2 {
+    font-family: 'Montserrat-Bold';
+    font-size: 2.2rem;
+    color: #fff;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.brand {
+    flex-basis: 30%;
+    padding-left: 10%;
+}
+
+.brand span {
+    text-transform: uppercase;
+    font-family: 'Montserrat-Regular';
+    color: #fff;
+    position: relative;
+    top: -10px;
+}
+
+nav {
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 10%;
+}
+
+
+/* Hamburger button */
+
+.hamburger {
+    padding: 0;
+    margin: 0;
+    width: 40px;
+    height: 35px;
+    border-style: none;
+    background-color: transparent;
+    position: relative;
+    border-top: 5px solid #fff;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.hamburger.active {
+    transform: rotate(-45deg);
+    transform-origin: right;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+.hamburger::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+
+}
+
+.hamburger.active::before {
+    opacity: 0;
+}
+
+.hamburger::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 25px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active::after {
+    transform: rotate(90deg) translate(-10px, 19px);
+    transform-origin: right;
+}
+
+.menu {
+    width: 300px;
+    position: absolute;
+    right: -300px;
+    list-style-type: none;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background: url('../img/header-bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.banner-item {
+    border: 8px solid #fde428;
+    border-left: none;
+    padding: 25px 0 60px 0;
+    position: relative;
+    left: 10vw;
+}
+
+.banner-item::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 15%;
+    background-color: #fde428;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+}
+
+.banner-item::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 10%;
+    background-color: #fde428;
+    position: absolute;
+    bottom: -8px;
+    left: -8px;
+    box-shadow: 0 -65px 0 #fde428;
+}
+
+.banner-item h2 {
+    position: relative;
+    left: -70px;
+    background-color: transparent;
+}
+
+.banner-item a {
+    font-family: 'Montserrat-Bold';
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: #fde428;
+    position: relative;
+    top: 35px;
+    left: -40px;
+}
+
+.pagination {
+    order: 1;
+    padding: 10vh 0;
+    font-family: 'MyriadPro-Regular';
+    font-size: 1.2rem;
+    color: #fde428;
+}
+
+.pagination::before {}
+
+.pagination span {
+    padding: 0 10px;
+}
+
+.banner-item:nth-child(2),
+.banner-item:nth-child(3) {
+    display: none;
 }
