@@ -6,16 +6,27 @@
 body {
     font-family: 'Montserrat-Regular', sans-serif;
     font-size: 16px;
+    background-color: #000;
 }
 
 .wrapper {
     position: relative;
+    left: 0;
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
     background-color: #ddd;
     overflow: hidden;
+    transition: .3s;
 }
+
+.wrapper.menuOn {
+    left: -45vw;
+}
+
+/* .wrapper.faded {
+    filter: brightness(0.3);
+} */
 
 h1 {
     font-family: 'Montserrat-Bold';
@@ -38,6 +49,10 @@ h2 {
     justify-content: stretch;
     align-items: center;
     padding-top: 30px;
+}
+
+.top-bar.scroll {
+    background-color: rgba(0, 028, 055, 0.6);
 }
 
 .brand {
@@ -69,7 +84,9 @@ nav {
     height: 35px;
     border-style: none;
     background-color: transparent;
-    position: relative;
+    position: fixed;
+    top: 40px;
+    right: 40px;
     border-top: 5px solid #fff;
     transition: all 0.3s ease;
     outline: none;
@@ -116,10 +133,40 @@ nav {
 }
 
 .menu {
-    width: 300px;
-    position: absolute;
-    right: -300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45vw;
+    height: 100vh;
+    background-color: #000;
+    position: fixed;
+    top: 0px;
+    right: -45vw;
+    z-index: -1;
     list-style-type: none;
+    transition: .3s;
+}
+
+.menu.active {
+    right: 0;
+}
+
+.menu-item {
+    padding: 4vh 0;
+}
+
+.menu-item a {
+    font-family: 'Montserrat-Regular';
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu-item a:hover {
+    cursor: pointer;
+    color: #fde428;
 }
 
 header {
@@ -132,15 +179,25 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
+    align-items: stretch;
 }
 
+.banner {}
+
 .banner-item {
+    width: 60%;
+    max-width: 300px;
+    margin: 0 auto;
     border: 8px solid #fde428;
     border-left: none;
     padding: 25px 0 60px 0;
     position: relative;
     left: 10vw;
+    display: none;
+}
+
+.banner-item.active {
+    display: block;
 }
 
 .banner-item::before {
@@ -188,15 +245,18 @@ header {
     font-family: 'MyriadPro-Regular';
     font-size: 1.2rem;
     color: #fde428;
+    text-align: center;
 }
-
-.pagination::before {}
 
 .pagination span {
     padding: 0 10px;
 }
 
-.banner-item:nth-child(2),
+.pagination span:hover {
+    cursor: pointer;
+}
+
+/* .banner-item:nth-child(2),
 .banner-item:nth-child(3) {
     display: none;
-}
+} */
