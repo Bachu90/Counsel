@@ -2,40 +2,46 @@ function slide() {
 
     var prev = document.querySelector('.prevBtn');
     var next = document.querySelector('.nextBtn');
-    var slide = 1;
+    var bannerItem = document.querySelectorAll('.banner-item');
+    var slide = 0;
 
-    document.querySelector('.banner-item:nth-child(' + slide + ')').classList.add('active');
+    function showSlide() {
+        bannerItem[slide].classList.add('active');
+    };
 
-    function prevSlide() {
-        document.querySelector('.banner-item:nth-child(' + slide + ')').classList.remove('active');
-        switch (slide) {
-            case 1:
-                slide = 3;
-                break;
-            case 2:
-                slide = 1;
-                break;
-            case 3:
-                slide = 2;
-                break;
-        }
-        document.querySelector('.banner-item:nth-child(' + slide + ')').classList.add('active');
-    }
+    function hideSlide() {
+        bannerItem[slide].classList.remove('active');
+    };
+
+    // function hideSlide() {
+    //     bannerItem[slide].classList.toggle('show');
+    //     setTimeout(function () {
+    //         bannerItem[slide].classList.toggle('active');
+    //     }, 1000);
+    // };
+
+
+
+    showSlide();
 
     function nextSlide() {
-        document.querySelector('.banner-item:nth-child(' + slide + ')').classList.remove('active');
-        switch (slide) {
-            case 1:
-                slide = 2;
-                break;
-            case 2:
-                slide = 3;
-                break;
-            case 3:
-                slide = 1;
-                break;
+        hideSlide();
+        if (slide == (bannerItem.length - 1)) {
+            slide = 0;
+        } else {
+            slide++;
         }
-        document.querySelector('.banner-item:nth-child(' + slide + ')').classList.add('active');
+        showSlide();
+    }
+
+    function prevSlide() {
+        hideSlide();
+        if (slide == 0) {
+            slide = (bannerItem.length - 1);
+        } else {
+            slide--;
+        }
+        showSlide();
     }
 
     prev.addEventListener('click', prevSlide);
@@ -60,7 +66,7 @@ function topBarScroll() {
     var topBar = document.querySelector(".top-bar");
     var main = document.querySelector("main");
     window.addEventListener('scroll', function () {
-        if (window.scrollY > main.offsetTop) {
+        if (window.scrollY > (main.offsetTop - topBar.clientHeight)) {
             topBar.classList.add('scroll');
         } else {
             topBar.classList.remove('scroll');
