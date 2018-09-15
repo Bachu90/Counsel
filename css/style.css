@@ -42,7 +42,7 @@ h3 {
     font-size: 1.8rem;
     color: #002e5b;
     text-transform: uppercase;
-    padding: 3vh 0;
+    padding-bottom: 3vh;
 }
 
 /* TOP BAR */
@@ -316,6 +316,10 @@ header {
 
 /* MAIN */
 
+main {
+    background-color: #fff;
+}
+
 .intro {
     font-family: 'MyriadPro-Regular', sans-serif;
     font-size: 1.2rem;
@@ -347,11 +351,7 @@ header {
 
 .about article {
     min-height: 100vh;
-    padding: 0 5vw;
-}
-
-.about article:nth-child(1) {
-    background-color: #fff;
+    padding: 3vh 5vw;
 }
 
 .about article img {
@@ -368,6 +368,39 @@ header {
     padding-bottom: 3vh;
 }
 
+.about article:nth-child(2) {
+    background-color: #f4f4f4;
+}
+
+.about article:nth-child(2) div img {
+    background-color: #fff;
+}
+
+.about-footer {
+    background-color: #002e5b;
+    flex-basis: 10vh;
+    max-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-footer p {
+    color: #fff;
+    flex-basis: 70%;
+}
+
+.about-footer button {
+    display: block;
+    flex-basis: 20%;
+    max-width: 160px;
+    padding: 10px 0;
+    background-color: #fde428;
+    border-style: none;
+    border-radius: 2px;
+    font-family: 'Montserrat-Bold';
+    color: #002e5b;
+}
 
 @media (max-height: 639px) {
     .banner-item::after {
