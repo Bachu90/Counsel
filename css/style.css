@@ -45,6 +45,45 @@ h3 {
     padding-bottom: 3vh;
 }
 
+h4 {
+    font-family: 'Montserrat-Bold';
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: #002e5b;
+}
+
+h5 {
+    font-family: 'Montserrat-Bold';
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #002e5b;
+    padding: 1vh 0;
+}
+
+img {
+    width: 100%;
+}
+
+.intro {
+    font-family: 'MyriadPro-Regular', sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.paragraph {
+    font-family: 'MyriadPro-Regular', sans-serif;
+    color: #000;
+    padding: 3vh 0;
+}
+
+.link {
+    font-family: 'Montserrat-Bold';
+    text-transform: uppercase;
+    color: #002e5b;
+    cursor: pointer;
+    line-height: 3rem;
+}
+
 /* TOP BAR */
 
 .top-bar {
@@ -320,28 +359,6 @@ main {
     background-color: #fff;
 }
 
-.intro {
-    font-family: 'MyriadPro-Regular', sans-serif;
-    font-size: 1.2rem;
-    color: #666;
-}
-
-.paragraph {
-    font-family: 'MyriadPro-Regular', sans-serif;
-    color: #000;
-    padding: 3vh 0;
-}
-
-.link {
-    font-family: 'Montserrat-Bold';
-    text-transform: uppercase;
-    color: #002e5b;
-    cursor: pointer;
-    line-height: 3rem;
-}
-
-
-
 /* ABOUT */
 
 .about {
@@ -350,7 +367,6 @@ main {
 }
 
 .about article {
-    min-height: 100vh;
     padding: 3vh 5vw;
 }
 
@@ -400,6 +416,181 @@ main {
     border-radius: 2px;
     font-family: 'Montserrat-Bold';
     color: #002e5b;
+}
+
+/* SERVICES */
+
+.services {
+    padding: 3vh 5vw;
+}
+
+.services .intro {
+    text-align: center;
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.services-item {
+    flex-basis: 30%;
+    padding: 2vh 0;
+}
+
+.services-item p {
+    font-family: 'MyriadPro-Regular', sans-serif;
+    color: #000;
+    padding: 1vh 0;
+}
+
+.services-item img {
+    width: 100%;
+}
+
+/* COUNTER */
+
+.counter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3vh 5vw;
+    background-color: #002e5b;
+}
+
+.counter div {
+    flex-basis: 40%;
+    padding: 2vh 2vw;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.counter div p:nth-child(1) {
+    font-family: 'Montserrat-Regular';
+    font-size: 2.5rem;
+    color: #fff;
+
+}
+
+.counter div p:nth-child(2) {
+    font-family: 'Montserrat-Regular';
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+/* WHY BEST */
+
+.why-best {
+    padding: 3vh 5vw;
+}
+
+.why-best .video {
+    padding: 8vh 0;
+    background-image: linear-gradient(90deg, #fff 25%, #fde428 25%, #fde428 75%, #fff 75%);
+    width: 100%;
+}
+
+/* TESTIMONIALS */
+
+.testimonials {
+    padding: 10vh 5vw;
+    background-color: #002e5b;
+    text-align: center;
+    color: #fff;
+}
+
+.quote {
+    font-size: 2.5rem;
+    padding: 2vh;
+}
+
+.testimonials p {
+    padding: 2vh 0;
+    font-family: 'MyriadPro-Regular';
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.testimonials p:last-child {
+    display: inline;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.testimonials p:last-child::before,
+.testimonials p:last-child::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* left: -50%; */
+}
+
+.testimonials p:last-child::before {
+    left: -50%;
+}
+
+.testimonials p:last-child::after {
+    right: -50%;
+}
+
+/* CONTACT */
+
+.contact {
+    padding: 3vh 5vw;
+}
+
+.contact .intro {
+    text-align: center;
+}
+
+.map-container {
+    padding: 3vh 0;
+}
+
+.map-item {
+    padding: 3vh 0;
+}
+
+.map-item p {
+    font-family: 'MyriadPro-Regular';
+    color: #002e5b;
+    margin: 20px 0;
+}
+
+.map-item img {
+    margin-bottom: 3vh;
+}
+
+.map-item p i {
+    margin-right: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vh 5vw;
+    background-color: #002e5b;
+}
+
+footer p {
+    color: #fff;
+}
+
+footer p span {
+    color: #fde428;
+}
+
+footer ul li {
+    list-style-type: none;
+    display: inline-block;
+    color: #fff;
+    margin: 0 5px;
 }
 
 @media (max-height: 639px) {
