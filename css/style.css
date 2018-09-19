@@ -374,6 +374,7 @@ main {
 }
 
 .about article img {
+    display: block;
     width: 100%;
 }
 
@@ -384,6 +385,10 @@ main {
 
 .about article a {
     padding-bottom: 3vh;
+}
+
+.about article div img {
+    width: 100%;
 }
 
 .about article:nth-child(2) {
@@ -655,7 +660,7 @@ footer ul li {
         padding: 0 3vw;
     }
 
-    .about article div:first-of-type {
+    .about article div:first-child {
         flex-basis: 70vw;
     }
 
