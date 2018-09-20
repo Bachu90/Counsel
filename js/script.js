@@ -74,6 +74,31 @@ function topBarScroll() {
     })
 }
 
+function windowScroll() {
+    var elements = [
+        document.querySelector(".about article:nth-child(1)"),
+        document.querySelector(".about article:nth-child(2)"),
+        document.querySelector(".services")
+    ];
+
+    function activate() {
+        if (window.scrollY < 10) {
+            elements.forEach(function (element) {
+                element.classList.add("hidden");
+            });
+        } else {
+            elements.forEach(function (element) {
+                if ((window.scrollY + window.innerHeight) > (element.offsetTop + element.offsetHeight / 2)) {
+                    element.classList.remove("hidden");
+                }
+            });
+        }
+    }
+
+    window.addEventListener("scroll", activate);
+}
+
 slide();
 menu();
 topBarScroll();
+windowScroll();

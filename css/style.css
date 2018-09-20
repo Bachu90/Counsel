@@ -87,7 +87,7 @@ img {
 /* TOP BAR */
 
 .top-bar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -100,7 +100,9 @@ img {
 }
 
 .top-bar.scroll {
+    position: fixed;
     background-color: rgba(0, 028, 055, 0.6);
+    z-index: 1;
 }
 
 .brand {
@@ -129,7 +131,7 @@ nav {
     height: 35px;
     border-style: none;
     background-color: transparent;
-    position: fixed;
+    position: absolute;
     top: 40px;
     right: 40px;
     border-top: 5px solid #fff;
@@ -371,6 +373,21 @@ main {
     display: flex;
     flex-direction: column;
     padding: 3vh 5vw;
+    transform: translateX(0%);
+    transition: transform .7s;
+}
+
+.about article>* {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.about article:nth-child(1).hidden {
+    transform: translateX(100%);
+}
+
+.about article:nth-child(2).hidden>* {
+    opacity: 0;
 }
 
 .about article img {
@@ -429,6 +446,16 @@ main {
 
 .services {
     padding: 3vh 5vw;
+    transform: scale(1);
+    transition: transform .7s;
+}
+
+.services.hidden {
+    transform: scale(0);
+}
+
+.services.hidden .services-item {
+    transform: scale(0);
 }
 
 .services h3 {
@@ -447,6 +474,21 @@ main {
 .services-item {
     flex-basis: 30%;
     padding: 2vh 0;
+}
+
+.services-item:nth-child(1) {
+    transform: scale(1);
+    transition: transform .7s .2s;
+}
+
+.services-item:nth-child(2) {
+    transform: scale(1);
+    transition: transform .7s .5s;
+}
+
+.services-item:nth-child(3) {
+    transform: scale(1);
+    transition: transform .7s .8s;
 }
 
 .services-item p {
