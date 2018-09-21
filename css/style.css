@@ -179,6 +179,26 @@ nav {
     transform-origin: right;
 }
 
+.goTop {
+    position: fixed;
+    bottom: 13vh;
+    right: 3vw;
+    width: 60px;
+    height: 60px;
+    /* background-color: red; */
+    border-style: none;
+    border: 3px solid #fde428;
+    border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.goTop.hidden {
+    opacity: 0;
+}
+
 .menu {
     display: flex;
     flex-direction: column;
@@ -534,9 +554,17 @@ main {
 /* WHY BEST */
 
 .why-best {
+    position: relative;
+    top: 0;
+    left: 0;
     padding: 3vh 5vw;
     display: flex;
     flex-direction: column;
+    transition: left .7s;
+}
+
+.why-best.hidden {
+    left: -100%;
 }
 
 .why-best .video {
@@ -552,6 +580,15 @@ main {
     background-color: #002e5b;
     text-align: center;
     color: #fff;
+}
+
+.testimonials>* {
+    opacity: 1;
+    transition: opacity .7s;
+}
+
+.testimonials.hidden>* {
+    opacity: 0;
 }
 
 .quote {
@@ -597,6 +634,16 @@ main {
 
 .contact {
     padding: 3vh 5vw;
+    transform: scale(1);
+    transition: transform .7s;
+}
+
+.contact.hidden {
+    transform: scale(0);
+}
+
+.contact.hidden .map-item {
+    transform: scale(0);
 }
 
 .contact h3 {
@@ -615,6 +662,21 @@ main {
 
 .map-item {
     padding: 3vh 0;
+}
+
+.map-item:nth-child(1) {
+    transform: scale(1);
+    transition: transform .7s .2s;
+}
+
+.map-item:nth-child(2) {
+    transform: scale(1);
+    transition: transform .7s .5s;
+}
+
+.map-item:nth-child(3) {
+    transform: scale(1);
+    transition: transform .7s .8s;
 }
 
 .map-item p {
