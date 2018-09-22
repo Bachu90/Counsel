@@ -1,3 +1,8 @@
+/* ***** COUNSEL PROJECT ***** */
+/* 22 September 2018 */
+/* Design by Symu : http://www.symu.co */
+/* Code by Grzegorz Bach : http://www.grzegorzbach.pl */
+
 * {
     margin: 0;
     padding: 0;
@@ -229,6 +234,10 @@ nav {
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.menu-item a.active {
+    color: #fde428;
 }
 
 .menu-item a:hover {

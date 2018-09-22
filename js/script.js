@@ -1,3 +1,8 @@
+/* ***** COUNSEL PROJECT ***** */
+/* 22 September 2018 */
+/* Design by Symu : http://www.symu.co */
+/* Code by Grzegorz Bach : http://www.grzegorzbach.pl */
+
 function slide() {
 
     var prev = document.querySelector('.prevBtn');
@@ -12,15 +17,6 @@ function slide() {
     function hideSlide() {
         bannerItem[slide].classList.remove('active');
     };
-
-    // function hideSlide() {
-    //     bannerItem[slide].classList.toggle('show');
-    //     setTimeout(function () {
-    //         bannerItem[slide].classList.toggle('active');
-    //     }, 1000);
-    // };
-
-
 
     showSlide();
 
@@ -66,7 +62,7 @@ function topBarScroll() {
     var topBar = document.querySelector(".top-bar");
     var main = document.querySelector("main");
     window.addEventListener('scroll', function () {
-        if (window.scrollY > (main.offsetTop - topBar.clientHeight)) {
+        if ((window.scrollY + 10) > (main.offsetTop - topBar.clientHeight)) {
             topBar.classList.add('scroll');
         } else {
             topBar.classList.remove('scroll');
@@ -179,13 +175,65 @@ function goTopArrow() {
                 clearInterval(loop);
             }
         }, 1);
-    })
+    });
 
     window.addEventListener("scroll", showArrow);
+}
+
+function navigate() {
+    var links = document.querySelectorAll(".menu-item a");
+    var topBar = document.querySelector(".top-bar");
+
+    links.forEach(function (link) {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            var pos = document.querySelector(link.getAttribute("href")).offsetTop - topBar.offsetHeight;
+            var doc = document.querySelector(".wrapper");
+            var scroll = setInterval(function () {
+                if (window.scrollY > pos) {
+                    if ((window.scrollY - 100) > pos) {
+                        window.scrollTo(0, (window.scrollY - 10))
+                    } else {
+                        window.scrollTo(0, (window.scrollY - 1))
+                    }
+                } else if (window.scrollY < pos) {
+                    if ((window.scrollY + 100) < pos) {
+                        window.scrollTo(0, (window.scrollY + 20))
+                    } else {
+                        window.scrollTo(0, (window.scrollY + 1))
+                    }
+                } else {
+                    clearInterval(scroll);
+                }
+            }, 1);
+        });
+    });
+
+    links.forEach(function (link) {
+        window.addEventListener("scroll", function () {
+            var section = document.querySelector(link.getAttribute("href"));
+            var sectionOffset = section.offsetTop - topBar.offsetHeight;
+            var sectionHeight = section.offsetTop + section.offsetHeight - topBar.offsetHeight;
+            if ((window.scrollY >= sectionOffset) && (window.scrollY < sectionHeight)) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    });
+
+
+}
+
+function hideAdvert() {
+    var doc = document.querySelector(".wrapper");
+    window.scrollTo(0, doc.offsetTop);
 }
 
 slide();
 menu();
 topBarScroll();
 windowScroll();
-goTopArrow();
+// goTopArrow();
+navigate();
+hideAdvert();
